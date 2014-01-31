@@ -1,0 +1,98 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+<section id="intro" class="sub">
+    <div class="container">
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h1>{{{title}}}</h1>
+                <p>
+                    {{excerpt}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<main class="body-content" role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <div class="post-wrap">
+                    <article class="{{post_class}}">
+                        <section class="post-content">
+                            {{content}}
+                        </section>
+                        <footer class="post-footer">
+                            {{! Everything below outputs content of the the post which has been published }}
+                            <div class="post-meta">
+                                <span>
+                                    <i class="fa fa-calendar"></i> <time datetime="{{date format="YYYY-MM-DD"}}">
+                                    {{date format='DD MMM YYYY'}}
+                                    </time>
+                                </span>
+                                <span>
+                                    <i class="fa fa-user"></i> by {{author.name}}
+                                </span>
+                                {{#if tags}}
+                                <span>
+                                    <i class="fa fa-tags"></i> {{tags separator=" | "}}
+                                </span>
+                                {{/if}}
+                                <span class="share">
+                                    <span class="title">Share this post:</span>
+                                    <ul class="social">
+                                        <li class="twitter">
+                                            <a href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="facebook">
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Facebook">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="google">
+                                            <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+                                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Google">
+                                                <i class="fa fa-google-plus"></i>
+                                            </a>
+                                        </li>
+                                        <li class="linkedin">
+                                            <a href="http://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}&summary={{encode excerpt}}&source={{@blog.url}}" target="_blank" title="Linkedin">
+												<i class="fa fa-linkedin"></i>
+											</a>
+                                        </li>
+                                    </ul>
+                                </span>
+                            </div>
+                            {{#if author}}
+                                <div class="post-author">
+                                    {{#if author.image}}
+                                    <!-- Author avatar -->
+                                    <div class="avatar">
+                                        <img src="{{author.image}}" alt="{{author.name}}" />
+                                    </div>
+                                    {{/if}}
+                                    <h5 class="author-name">{{author.name}}</h5>
+                                    <p>
+                                        {{author.bio}}
+                                    </p>
+                                </div>
+                            {{/if}}
+                        </footer>
+                    </article>
+                    {{> comment-form}}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="widget-wrap">
+                    {{> sidebars}}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{{/post}}

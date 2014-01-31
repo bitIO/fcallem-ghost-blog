@@ -1,0 +1,42 @@
+{{!< default}}
+{{> intro}}
+{{! The main content area on the homepage }}
+<main class="body-content" role="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="filter">
+                    <button type="button" class="btn btn-theme active visible-xs filter-mobile" data-toggle="collapse" data-target="#tags">
+                        <i class="fa fa-reorder"></i> Filter By Tags
+                    </button>
+                    <ul id="tags" class="collapse navbar-collapse">
+                        <li>
+                            <a href="#" data-filter="*" class="btn btn-theme filter-item active">
+                                <i class="fa fa-reorder"></i> All Posts
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {{! Each post will be output using this markup }}
+            <div id="isotope-content">
+                {{#foreach posts}}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 {{post_class}}" {{#if tags}}data-tags="{{tags separator=","}}"{{/if}}>
+                    <div class="wrap">
+                        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                        <div class="post-excerpt">
+                            {{content words="0"}} {{excerpt}} ... <a class="read-more" href="{{url}}">Read more »</a>
+                        </div>
+                        {{>home-meta-post}}
+                    </div>
+                </div>
+                {{/foreach}}
+            </div>
+        </div>
+        {{#if pagination}}
+          {{pagination}}
+        {{/if}}
+    </div>
+</main>

@@ -1,0 +1,55 @@
+<nav class="navbar navbar-custom" role="navigation">
+    <div class="container">
+    	{{! Begin Header }}
+        <div class="navbar-header">
+        	{{! Begin Logo }}
+            <a class="navbar-brand" href="{{@blog.url}}">
+				{{#if @blog.logo}}
+				<img src="{{@blog.logo}}" alt="{{@blog.title}}" title="{{@blog.title}}"/>
+				{{else}}
+				{{@blog.title}}
+				{{/if}}
+			</a>
+			{{! End Logo }}
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-nav">
+                <span>Navigation</span> <i class="fa fa-tasks"></i>
+            </button>
+        </div>
+        {{! End Header }}
+        {{! Begin Social }}
+        <div class="social-top">
+            <ul class="social">
+                <li class="twitter">
+                    <a href="#" target="_blank" title="Twitter"> <i class="fa fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="facebook">
+                    <a href="#" target="_blank" title="Facebook"> <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="google">
+                    <a href="#" target="_blank" title="Google">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </li>
+                <li class="linkedin">
+                    <a href="#" target="_blank" title="Linkedin">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="skype">
+                    <a href="#" target="_blank" title="Skype">
+                        <i class="fa fa-skype"></i>
+                    </a>
+                </li>
+                <li class="rss">
+                    <a href="/rss/" target="_blank" title="Rss Feed">
+                        <i class="fa fa-rss"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        {{! End Social }}
+        {{>nav}}
+    </div>
+</nav>

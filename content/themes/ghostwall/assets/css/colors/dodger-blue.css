@@ -1,0 +1,84 @@
+::selection {
+	background: #1fb2ff;
+	color: #fff;
+}
+a:hover, a:focus{
+	color: #1fb2ff;
+}
+.btn-theme:hover,
+.btn-theme:focus,
+.btn-theme:active,
+.btn-theme.active,
+.open .dropdown-toggle.btn-theme {
+	background-color:#1fb2ff;
+	border-color:#1fb2ff;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+	border-color: #1fb2ff;
+}
+blockquote {
+	border-left-color:#1fb2ff;
+}
+#intro {
+	background-color: #1fb2ff;
+}
+#intro.covered:before{
+	background-color: #1fb2ff;
+}
+#isotope-content .post.featured .wrap:after {
+  	border-color: transparent #1fb2ff;
+}
+.post .wrap .post-title a:hover{
+	color: #1fb2ff;
+}
+.post .wrap .post-photo .mask a.preview:hover,
+.post .wrap .post-photo .mask a.detail:hover {
+	border-color: #1fb2ff;
+}
+.post .wrap .post-photo .mask a.preview:hover i,
+.post .wrap .post-photo .mask a.detail:hover i{
+	color: #1fb2ff;
+}
+.post .wrap .post-excerpt a.read-more{
+	color:#1fb2ff;
+}
+.post-content a{
+	color:#1fb2ff;
+}
+.feedList li:hover .itemTitle a, .feedList li:hover .itemContent{
+	color: #1fb2ff;
+}
+.feedList li .itemContent .read-more {
+	color: #1fb2ff;
+}
+.flickr-feed li a:hover img{
+	border-color:#1fb2ff;
+}
+.instagram-feed li a:hover img{
+	border-color:#1fb2ff;
+}
+.dribbble-feed li a:hover img{
+	border-color:#1fb2ff;
+}
+.totop:hover {
+	background:#1fb2ff;
+}
+.main-nav.in>li.active>a,
+.main-nav.in>li>a:hover {
+	color: #1fb2ff;
+}
