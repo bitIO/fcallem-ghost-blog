@@ -1,9 +1,9 @@
-@import url(colors/default.css);
+/*@import url(colors/default.css);*/
 /*@import url(colors/sea-green.css);*/
 /*@import url(colors/darkcyan.css);*/
 /*@import url(colors/golden-rod.css);*/
 /*@import url(colors/indian-red.css);*/
-/*@import url(colors/dark-slate-gray.css);*/
+@import url(colors/dark-slate-gray.css);
 /*@import url(colors/yellow.css);*/
 /*@import url(colors/hot-pink.css);*/
 /*@import url(colors/medium-violet-red.css);*/

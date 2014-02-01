@@ -702,6 +702,7 @@ ul.social li.rss:hover{
 .post-wrap .post-meta span.share{
 	float: right;
 	margin-right: 0;
+	padding-top: 20px;
 }
 .post-wrap .post-meta span.share .title{
 	font-weight: bold;
