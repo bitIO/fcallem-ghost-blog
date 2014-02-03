@@ -53,7 +53,7 @@ var ghostApp={
         });
         for (i = 0; i < filters.length; i++) {
             activeClassStr='';
-            var curFilterStr='.tag-'+filters[i].tagName.toLowerCase().replace(' ','-');
+            var curFilterStr='.tag-'+filters[i].tagName.toLowerCase().replace(' ','-').replace('.','-');
             if(lastActiveTag!=='*' && rememberLastActiveTag && lastActiveTag===curFilterStr){
                 activeClassStr='active';
             }
@@ -286,8 +286,8 @@ var ghostApp={
                     var wrapEachWithStr='<li></li>';
                     if($(this).data('display'))
                         display=$(this).data('display');
-                    $(this).spectragram('getRecentTagged',{
-                        query: 'converse',
+                    $(this).spectragram('getUserFeed',{
+                        query: 'bitio',
                         max: display
                     });
                 }
@@ -340,7 +340,8 @@ var ghostApp={
                        duration: 750,
                        easing: 'linear',
                        queue: false,
-                    }
+                    },
+                    layoutMode: "masonry"
                 });
                 $('#filter ul li:first-child a').trigger('click');
             });
