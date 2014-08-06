@@ -286,8 +286,8 @@ var ghostApp={
                     var wrapEachWithStr='<li></li>';
                     if($(this).data('display'))
                         display=$(this).data('display');
-                    $(this).spectragram('getRecentTagged',{
-                        query: 'converse',
+                    $(this).spectragram('getUserFeed',{
+                        query: 'bitio',
                         max: display
                     });
                 }
