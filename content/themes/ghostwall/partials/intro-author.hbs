@@ -1,0 +1,17 @@
+{{#author}}
+<section id="intro"
+	{{#if cover}}
+	class="covered" style="background-image: url({{cover}})"
+	{{else}} 
+		{{#if @blog.cover}} class="covered" style="background-image: url({{@blog.cover}})"{{/if}}
+	{{/if}}>
+	<div class="container">
+		 <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<h1>{{name}}</h1>
+				<p>{{bio}}</p>
+			</div>
+		</div>
+	</div>
+</section>
+{{/author}}

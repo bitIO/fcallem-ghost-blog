@@ -1,17 +1,11 @@
 {{!< default}}
-
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-{{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-<section id="intro" class="sub">
+<section id="intro" class="sub{{#if image}} covered{{/if}}" {{#if image}}style="background-image: url({{image}})"{{/if}}>
     <div class="container">
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <h1>{{{title}}}</h1>
-                <p>
-                    {{excerpt}}
-                </p>
+                <p>{{excerpt}}</p>
             </div>
         </div>
     </div>
@@ -26,7 +20,6 @@
                             {{content}}
                         </section>
                         <footer class="post-footer">
-                            {{! Everything below outputs content of the the post which has been published }}
                             <div class="post-meta">
                                 <span>
                                     <i class="fa fa-calendar"></i> <time datetime="{{date format="YYYY-MM-DD"}}">
@@ -34,7 +27,7 @@
                                     </time>
                                 </span>
                                 <span>
-                                    <i class="fa fa-user"></i> by {{author.name}}
+                                    <i class="fa fa-user"></i> by {{author}}
                                 </span>
                                 {{#if tags}}
                                 <span>
@@ -71,12 +64,11 @@
                             {{#if author}}
                                 <div class="post-author">
                                     {{#if author.image}}
-                                    <!-- Author avatar -->
                                     <div class="avatar">
                                         <img src="{{author.image}}" alt="{{author.name}}" />
                                     </div>
                                     {{/if}}
-                                    <h5 class="author-name">{{author.name}}</h5>
+                                    <h5 class="author-name">{{author}}</h5>
                                     <p>
                                         {{author.bio}}
                                     </p>

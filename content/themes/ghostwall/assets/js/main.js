@@ -53,7 +53,7 @@ var ghostApp={
         });
         for (i = 0; i < filters.length; i++) {
             activeClassStr='';
-            var curFilterStr='.tag-'+filters[i].tagName.toLowerCase().replace(' ','-');
+            var curFilterStr='.tag-'+filters[i].tagName.toLowerCase().replace(new RegExp(' ', 'g'),'-');
             if(lastActiveTag!=='*' && rememberLastActiveTag && lastActiveTag===curFilterStr){
                 activeClassStr='active';
             }
@@ -82,9 +82,10 @@ var ghostApp={
     reformatPost:function(){
         if($('.post').length){
             $('.post .wrap:not(.formated)').each(function() {
-                if($(this).find('.post-excerpt').has('img').length){
+                if($(this).find('.hidden-cover').has('img').length){
                     var $excerpt=$('.post-excerpt',$(this));
-                    var $postImg=$excerpt.find('img');
+                    var $hiddenCover=$('.hidden-cover',$(this));
+                    var $postImg=$hiddenCover.find('img');
                     var postUrl=$(this).find('.post-title a').attr('href');
                     $excerpt.prepend('<div class="post-photo"></div>');
                     var $postPhoto=$('.post-photo',$excerpt);
@@ -104,25 +105,28 @@ var ghostApp={
                         allow_resize: true,
                     });
                 }
-                if($(this).find(".post-excerpt").has('iframe[src^="//www.youtube.com"]').length){
+                if($(this).find('.hidden-cover').has('iframe[src^="//www.youtube.com"]').length){
                     var $excerpt=$('.post-excerpt',$(this));
-                    var $youtube=$excerpt.find("iframe:first-child");
+                    var $hiddenCover=$('.hidden-cover',$(this));
+                    var $youtube=$hiddenCover.find('iframe:first-child');
                     $excerpt.prepend('<div class="post-video"></div>');
                     var $postYoutube=$('.post-video',$excerpt);
                     $youtube.prependTo($postYoutube);
                     $(this).addClass('formated');
                 }
-                if($(this).find(".post-excerpt").has('iframe[src^="https://w.soundcloud.com"]').length){
+                if($(this).find('.hidden-cover').has('iframe[src^="https://w.soundcloud.com"]').length){
                     var $excerpt=$('.post-excerpt',$(this));
-                    var $soundcloud=$excerpt.find("iframe:first-child");
+                    var $hiddenCover=$('.hidden-cover',$(this));
+                    var $soundcloud=$hiddenCover.find('iframe:first-child');
                     $excerpt.prepend('<div class="post-audio"></div>');
                     var $postSoundcloud=$('.post-audio',$excerpt);
                     $soundcloud.prependTo($postSoundcloud);
                     $(this).addClass('formated');
                 }
-                if($(this).find(".post-excerpt").has('iframe[src^="//player.vimeo.com"]').length){
+                if($(this).find('.hidden-cover').has('iframe[src^="//player.vimeo.com"]').length){
                     var $excerpt=$('.post-excerpt',$(this));
-                    var $vimeo=$excerpt.find("iframe:first-child");
+                    var $hiddenCover=$('.hidden-cover',$(this));
+                    var $vimeo=$hiddenCover.find( 'iframe:first-child' );
                     $excerpt.prepend('<div class="post-video"></div>');
                     var $postVimeo=$('.post-video',$excerpt);
                     $vimeo.prependTo($postVimeo);

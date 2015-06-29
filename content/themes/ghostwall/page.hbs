@@ -1,10 +1,6 @@
 {{!< default}}
-
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-{{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-<section id="intro" class="sub">
+<section id="intro" class="sub{{#if image}} covered{{/if}}" {{#if image}}style="background-image: url({{image}})"{{/if}}>
     <div class="container">
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

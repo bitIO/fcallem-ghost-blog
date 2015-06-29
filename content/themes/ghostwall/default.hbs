@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-    {{! Document Settings }}
-    <meta charset="utf-8" />
-    {{! Page Meta }}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="MobileOptimized" content="320" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="google-site-verification"
-    content="oJgPPU1lyfuQoxc8Zy_MK9C_3-izRV7SYESBOqjZKIE" />
-
-    {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/prettyPhoto.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/syntaxhighlighter/shCore.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/syntaxhighlighter/shCoreDefault.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/colors.css"}}"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}"/>
-    {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-20977525-3', 'auto');
-      ga('send', 'pageview');
-
-    </script>
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <title>{{meta_title}}</title>
+        <meta name="description" content="{{meta_description}}" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="oJgPPU1lyfuQoxc8Zy_MK9C_3-izRV7SYESBOqjZKIE" />
+        <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset "css/prettyPhoto.css"}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset "css/syntaxhighlighter/shCore.css"}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset "css/syntaxhighlighter/shCoreDefault.css"}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset "css/colors.css"}}"/>
+        <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}"/>
+        {{ghost_head}}
+        <script type="text/javascript"> var rootUrl = '{{@blog.url}}';</script>
+        {{>google-analytic}}
+    </head>
 <body class="{{body_class}} pattern">
     <div id="fb-root"></div>
     <!--[if lt IE 9]>
@@ -46,13 +29,10 @@
     <![endif]-->
     <div class="main-wrap">
         {{> header}}
-        {{! Everything else gets inserted here }}
         {{{body}}}
         {{> footer}}
-        {{! Ghost outputs important scripts and data with this tag }}
-        {{ghost_foot}}
     </div>
-    {{! The main JavaScript file for GhostWall }}
+    {{ghost_foot}}
     <script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/jquery.easing.1.3.js"}}" ></script>
     <script type="text/javascript" src="{{asset "js/jquery.prettyPhoto.js"}}"></script>
@@ -67,7 +47,6 @@
     <script type="text/javascript" src="{{asset "js/sscr.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/jqBootstrapValidation.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/imagesloaded.pkgd.min.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/syntaxhighlighter/shCore.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/syntaxhighlighter/shAutoloader.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/syntaxhighlighter/shBrushXml.js"}}"></script>

@@ -28,7 +28,7 @@
 	font-family: 'Open Sans', sans-serif;
 	color: #777;
 	font-size: 14px;
-	line-height: 1.65;
+	line-height: 1.75;
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
 	padding: 0;
@@ -315,7 +315,7 @@ ul.social li.rss:hover{
 /*           3. INTRO BOX           */
 /*---------------------------------*/
 #intro {
-	padding:40px 0;
+	padding: 100px 0;
 	background-color: #01C7CE;
 }
 #intro.covered{
@@ -326,7 +326,7 @@ ul.social li.rss:hover{
 	-o-background-size: cover;
 	background-size: cover;
 	position: relative;
-	padding: 60px 0;
+	padding: 130px 0;
 }
 #intro.covered:before{
 	position: absolute;
@@ -343,7 +343,10 @@ ul.social li.rss:hover{
 	opacity: 0.5;
 }
 #intro.sub{
-	padding-bottom: 50px;
+	padding-bottom: 110px;
+}
+#intro.sub.covered{
+	padding-bottom: 140px;
 }
 #intro h1{
 	margin-top: 0;
@@ -702,7 +705,6 @@ ul.social li.rss:hover{
 .post-wrap .post-meta span.share{
 	float: right;
 	margin-right: 0;
-	padding-top: 20px;
 }
 .post-wrap .post-meta span.share .title{
 	font-weight: bold;
