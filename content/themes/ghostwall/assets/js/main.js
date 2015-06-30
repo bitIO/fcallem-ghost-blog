@@ -63,7 +63,9 @@ var ghostApp={
                 filterItemStr+=' ('+filters[i].total+')';
             }
             filterItemStr+='</a></li>';
-            $filterControl.append(filterItemStr);
+            if ( filters[i].total >= homeTagsMinAmount ) {
+              $filterControl.append(filterItemStr);
+            }
         }
         if(lastActiveTag!=='*' && rememberLastActiveTag){
             $("#filter ul li a[data-filter='"+lastActiveTag+"']").trigger('click');

@@ -8,3 +8,5 @@ var your_latitude   = 40.2970286; // Your map latitude
 var your_longitude  = -3.8312561; // Your map longitude
 var enable_tag_count= true;
 var rememberLastActiveTag=false;
+
+var homeTagsMinAmount = 2;
