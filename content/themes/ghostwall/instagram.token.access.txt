@@ -1,0 +1,24 @@
+0f4e54a1903546518301a874ad288e94
+
+https://api.instagram.com/oauth/authorize/?client_id=0f4e54a1903546518301a874ad288e94&redirect_uri=http://blog.fcallem.net&response_type=code
+code: 2fa433396e204d7389ede8c3dcbdcd3f
+
+
+curl -F 'client_id=0f4e54a1903546518301a874ad288e94' \
+    -F 'client_secret=7ee88646f3e14ada9fe343b93a30b15f' \
+    -F 'grant_type=authorization_code' \
+    -F 'redirect_uri=http://blog.fcallem.net' \
+    -F 'code=2fa433396e204d7389ede8c3dcbdcd3f' \
+    https://api.instagram.com/oauth/access_token
+
+{
+  "access_token": "32740011.0f4e54a.80374ecf59df40b9bc30d78595f34bfd",
+  "user": {
+    "username": "bitio",
+    "bio": "",
+    "website": "",
+    "profile_picture": "https:\/\/instagramimages-a.akamaihd.net\/profiles\/profile_32740011_75sq_1333647571.jpg",
+    "full_name": "Francisco Calle Moreno",
+    "id": "32740011"
+  }
+}
