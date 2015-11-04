@@ -10,3 +10,4 @@ var enable_tag_count= true;
 var rememberLastActiveTag=false;
 
 var homeTagsMinAmount = 2;
+var showGetInTouch = false;
